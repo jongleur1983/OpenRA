@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Common.Traits
 		public WDist MinimumDistance { get { return info.MinDistance; } }
 
 		void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell, Activity next) { RequestTransport(self, targetCell, next); }
-		void INotifyHarvesterAction.MovingToRefinery(Actor self, CPos targetCell, Activity next) { RequestTransport(self, targetCell, next); }
+		void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor target, Activity next) { RequestTransport(self, target.Location, next); }
 		void INotifyHarvesterAction.MovementCancelled(Actor self) { MovementCancelled(self); }
 
 		// We do not handle Harvested notification
